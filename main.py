@@ -94,22 +94,23 @@ def main():
             
             name = input("Enter the name of the person: ")
             save_user_image(name, image_path, dataset_folder)
+            break
             
 
         elif choice == '2':
             name = input("Enter the name of the person: ")
             if check_against_blacklist(os.path.join(dataset_folder, f"{name}.jpg"), blacklisted_faces):
-                continue
+                break
             
             print(f"{name} is not in the blacklist.")
 
         elif choice == '3':
             name = input("Please write the name of the person: ")
             moveToBlacklisted(name)
-            continue
+            break
 
         
-        elif choice == '3':
+        elif choice == '4':
             print("Exiting the application.")
             break
         
